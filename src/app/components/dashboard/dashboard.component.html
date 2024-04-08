@@ -17,10 +17,22 @@
       >
         Obtener Clima
       </button>
-      <div class="card mt-3">
-        <p><b>Temperatura: </b>27</p>
-        <p><b>Humedad:</b>27</p>
-        <p><b>Clima:</b>27</p>
+      <div class="text-center mt-3" *ngIf="loading">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngIf="query">
+        <p><b>Temperatura: </b>{{ temperatura }} Grados Celcius</p>
+        <p><b>Humedad:</b>{{ humedad }}</p>
+        <p><b>Clima:</b>{{ clima }}</p>
       </div>
     </div>
   </div>
