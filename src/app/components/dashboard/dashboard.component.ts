@@ -30,7 +30,11 @@ export class DashboardComponent implements OnInit {
       this.temperatura = data.main.temp - 273;
       this.clima = data.weather[0].main;
       this.humedad = data.main.humidity
-    }, error => console.log(error));
+    }, error => {
+      console.log(error)
+      this.loading = false;
+      this.query = false;
+    });
   }
 
 
